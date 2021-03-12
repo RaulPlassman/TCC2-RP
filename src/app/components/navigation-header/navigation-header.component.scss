@@ -1,0 +1,45 @@
+.navigation-header {
+    position: fixed;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 1;
+
+    &__container {
+        width: 900px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__logo {
+            cursor: pointer;
+
+            & > img {
+                height: 40px;
+            }
+        }
+    
+        &__items-container {
+            display: flex;
+            list-style: none;
+    
+            &__item {
+                font-size: 14px;
+                font-weight: bold;
+                text-transform: uppercase;
+                cursor: pointer;
+    
+                &:not(:last-child) {
+                    margin-right: 25px;
+                }
+
+                &:hover {
+                    background: radial-gradient(circle at 12.5% 12.5%, #ec68e4 0, #fa5fd3 4.55%, #ff58c1 9.09%, #ff52ae 13.64%, #ff509c 18.18%, #ff5089 22.73%, #ff5377 27.27%, #ff5965 31.82%, #ff6154 36.36%, #ff6943 40.91%, #fe7232 45.45%, #f37b1f 50%, #e78303 54.55%, #d98b00 59.09%, #cb9300 63.64%, #bb9900 68.18%, #aa9f00 72.73%, #99a400 77.27%, #86a900 81.82%, #70ad04 86.36%, #58b023 90.91%, #36b337 95.45%, #00b54a 100%);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+        }
+    }
+}

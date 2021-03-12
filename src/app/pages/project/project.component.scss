@@ -1,0 +1,177 @@
+.project {
+    position: relative;
+    
+    &__home {
+        width: 900px;
+        height: 670px;
+        margin: auto;
+
+        &__container {
+            width: 900px;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+
+            &__text {
+                margin-top: 60px;
+                opacity: 0;
+                animation: showContent 1.5s ease 2s forwards;
+
+                & > p {
+                    width: 500px;
+                    font-size: 13px;
+                    line-height: 1.4;
+                }
+
+                &__image {
+                    margin-top: 60px;
+                    text-align: center;
+                    opacity: 0;
+                    animation: showContent 1.5s ease 3s forwards;
+
+                    & > img {
+                        width: 270px;
+                    }
+                }
+            }
+            
+            &__photo {
+                margin-top: 30px;
+                flex-grow: 1;
+                display: flex;
+                justify-content: center;
+
+                .animated-polaroid-photo {
+                    width: 270px;
+                    height: 400px;
+                    perspective: 600px;
+                    opacity: 0;
+                    animation: showContent 1.5s ease 1s forwards;
+
+                    &__card {
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+                        transition: transform 1s;
+                        transform-style: preserve-3d;
+
+                        &__face {
+                            position: absolute;
+                            height: 100%;
+                            width: 100%;
+                            backface-visibility: hidden;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 5px;
+
+                            &--front {
+                                @extend .animated-polaroid-photo__card__face;
+                                background: white;
+
+                                &__image-container {
+                                    height: 80%;
+                                    width: 90%;
+                                    margin-top: -30px;
+                                    background-color: gray;
+                                    background-size: cover;
+                                    transition: background-image 2s ease;
+                                }
+                            }
+
+                            &--back {
+                                @extend .animated-polaroid-photo__card__face;
+                                background: radial-gradient(circle at 12.5% 12.5%, #ec68e4 0, #fa5fd3 4.55%, #ff58c1 9.09%, #ff52ae 13.64%, #ff509c 18.18%, #ff5089 22.73%, #ff5377 27.27%, #ff5965 31.82%, #ff6154 36.36%, #ff6943 40.91%, #fe7232 45.45%, #f37b1f 50%, #e78303 54.55%, #d98b00 59.09%, #cb9300 63.64%, #bb9900 68.18%, #aa9f00 72.73%, #99a400 77.27%, #86a900 81.82%, #70ad04 86.36%, #58b023 90.91%, #36b337 95.45%, #00b54a 100%);
+                                transform: rotateY(180deg);
+                                
+                                & > img {
+                                    width: 100px;
+                                }
+                            }
+                        }
+    
+                        &__back {
+                            height: 100%;
+                            width: 100%;
+                            background-color: red;
+                        }
+
+                        &.is-flipped {
+                            transform: rotateY(180deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__gallery {
+        background-image: url('../../../assets/images/gallery-bg.png');
+        background-size: cover;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        padding: 80px 0;
+
+        &__container {
+            width: 900px;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-gap: 30px;
+
+            &__item {
+                display: flex;
+                justify-content: center;
+                opacity: 0;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__footer {
+        padding: 20px 0;
+        text-align: center;
+
+        & > img {
+            height: 50px;
+            margin-bottom: 15px;
+        }
+
+        &__copyright {
+            font-size: 12px;
+            color: gray;
+        }
+    }
+}
+
+@keyframes showContent {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes rotatePolaroidPhoto {
+    from {
+        transform: rotateY(0);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes showGallery {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,33 @@
+.polaroid-photo {
+    height: 300px;
+    width: 200px;
+    background-color: white;
+    padding: 20px 12px 50px 12px;
+    box-sizing: border-box;
+    transition: transform 0.2s ease;
+    border-radius: 3px;
+
+    &__photo {
+        height: 100%;
+        background-color: gray;
+        background-size: 300%;
+        background-position: center;
+        transition: background-size 4s linear;
+    }
+
+    &--landscape {
+        transform: rotate(-90deg);
+
+        &:hover {
+            transform: scale(1.05) rotate(-90deg) !important;
+        }
+    }
+
+    &:hover {
+        transform: scale(1.05);
+
+        .polaroid-photo__photo {
+            background-size: 250%;
+        }
+    }
+}

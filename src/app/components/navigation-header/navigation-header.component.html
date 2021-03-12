@@ -1,0 +1,15 @@
+<header class="navigation-header" [ngStyle]="{'background-color': bgColor}">
+    <div class="navigation-header__container">
+        <div class="navigation-header__container__logo">
+            <img src="../../../assets/images/logo.png" alt="Nós">
+        </div>
+        <ul class="navigation-header__container__items-container">
+            <li
+                *ngFor="let item of items"
+                class="navigation-header__container__items-container__item"
+                [routerLink]="[item.link]">
+                {{item.name}}
+            </li>
+        </ul>
+    </div>
+</header>
