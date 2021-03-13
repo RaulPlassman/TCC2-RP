@@ -25,7 +25,7 @@
                 }
 
                 &__image {
-                    margin-top: 60px;
+                    margin-top: 30px;
                     text-align: center;
                     opacity: 0;
                     animation: showContent 1.5s ease 3s forwards;
@@ -126,21 +126,6 @@
                 opacity: 0;
                 cursor: pointer;
             }
-        }
-    }
-
-    &__footer {
-        padding: 20px 0;
-        text-align: center;
-
-        & > img {
-            height: 50px;
-            margin-bottom: 15px;
-        }
-
-        &__copyright {
-            font-size: 12px;
-            color: gray;
         }
     }
 }

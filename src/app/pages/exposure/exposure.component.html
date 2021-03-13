@@ -1,0 +1,19 @@
+<article class="exposure">
+    <div class="exposure__container">
+        <div class="exposure__container__column" style="padding-top: 90px">
+            <div *ngFor="let photo of columns[0]" class="exposure__container__column__item">
+                <polaroid-photo [photo]="photo" [size]="'big'"></polaroid-photo>
+            </div>
+        </div>
+        <div class="exposure__container__column">
+            <div *ngFor="let photo of columns[1]" class="exposure__container__column__item">
+                <polaroid-photo [photo]="photo" [size]="'big'"></polaroid-photo>
+            </div>
+        </div>
+        <div class="exposure__container__column" style="padding-top: 170px">
+            <div *ngFor="let photo of columns[2]" class="exposure__container__column__item">
+                <polaroid-photo [photo]="photo" [size]="'big'"></polaroid-photo>
+            </div>
+        </div>
+    </div>
+</article>

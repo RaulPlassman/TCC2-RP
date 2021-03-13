@@ -23,6 +23,11 @@
         }
     }
 
+    &--big {
+        height: 400px;
+        width: 270px;
+    }
+
     &:hover {
         transform: scale(1.05);
 

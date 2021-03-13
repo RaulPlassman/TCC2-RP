@@ -8,6 +8,8 @@ import { NavigationHeaderComponent } from './components/navigation-header/naviga
 import { PolaroidPhotoComponent } from './components/polaroid-photo/polaroid-photo.component';
 import { ProjectComponent } from './pages/project/project.component';
 import { ParticipantsComponent } from './pages/participants/participants.component';
+import { GameOfMemoriesComponent } from './pages/game-of-memories/game-of-memories.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ParticipantsComponent } from './pages/participants/participants.compone
     NavigationHeaderComponent,
     PolaroidPhotoComponent,
     ProjectComponent,
-    ParticipantsComponent
+    ParticipantsComponent,
+    GameOfMemoriesComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

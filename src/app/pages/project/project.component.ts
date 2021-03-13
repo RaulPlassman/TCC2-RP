@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { PhotoService } from '../../services/photo-service/photo.service';
 
 @Component({
   selector: 'app-project',
@@ -7,73 +8,47 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class ProjectComponent implements OnInit {
 
-  textOpacity: number = 1;
-  carouselImages: Array<string> = [
-    "../../../assets/images/foto-1.jpg",
-    "../../../assets/images/foto-2.jpg",
-    "../../../assets/images/foto-3.jpg"
-  ];
-  photoFlipped: boolean = false;
-  currentCarouselImage: string = `url(${this.carouselImages[0]})`;
-  galleryImages: Array<{src: string, orientation: string}> = [
-    {
-      src: '../../../assets/images/gallery/foto-1.jpg',
-      orientation: 'portrait',
-    },
-    {
-      src: '../../../assets/images/gallery/foto-1.jpg',
-      orientation: 'portrait',
-    },
-    {
-      src: '../../../assets/images/gallery/foto-1.jpg',
-      orientation: 'landscape',
-    },
-    {
-      src: '../../../assets/images/gallery/foto-1.jpg',
-      orientation: 'landscape',
-    },
-    {
-      src: '../../../assets/images/gallery/foto-1.jpg',
-      orientation: 'portrait',
-    },
-    {
-      src: '../../../assets/images/gallery/foto-1.jpg',
-      orientation: 'landscape',
-    },
-    {
-      src: '../../../assets/images/gallery/foto-1.jpg',
-      orientation: 'portrait',
-    },
-    {
-      src: '../../../assets/images/gallery/foto-1.jpg',
-      orientation: 'landscape',
-    },
-    {
-      src: '../../../assets/images/gallery/foto-1.jpg',
-      orientation: 'portrait',
-    }
-  ];
-  showGallery: boolean = false;
+  NUMBER_OF_CARD_PHOTOS: number = 3;
+  NUMBER_OF_GALLERY_PHOTOS: number = 9;
 
-  constructor() { }
+  cardPhotos: Array<string> = [];
+  photoFlipped: boolean = false;
+  currentCardPhoto: string;
+  galleryPhotos: Array<{src: string, orientation: string}> = [];
+  showGallery: boolean = false; 
+
+  constructor(private photoService: PhotoService) { }
 
   ngOnInit(): void {
-    this.galleryImages = this.shuffle(this.galleryImages);
+    //Pegando fotos aleatórias para exibir no card
+    let cardRandomPhotos = this.photoService.getRandomPhotos(this.NUMBER_OF_CARD_PHOTOS);
+    cardRandomPhotos.map(photo => {
+      this.cardPhotos.push(`url(${photo})`);
+    });
+    this.currentCardPhoto = this.cardPhotos[0];
+    
+    //Intervalo para trocar a foto do card
     let index = 0;
     setInterval(() => {
-      if(index < (this.carouselImages.length - 1)) {
+      if(index < (this.cardPhotos.length - 1)) {
         index++;
       }
       else {
         index = 0;
       }
-      this.currentCarouselImage = `url(${this.carouselImages[index]})`;
+      this.currentCardPhoto = this.cardPhotos[index];
     }, 5000);
+
+    let galleryRandomPhotos = this.photoService.getRandomPhotos(this.NUMBER_OF_GALLERY_PHOTOS);
+    galleryRandomPhotos.map(photo => {
+      this.galleryPhotos.push({
+        src: photo,
+        orientation: (Math.floor(Math.random() * 3)) % 2 === 0 ? 'portrait' : 'landscape'
+      });
+    });
   }
 
   @HostListener('window:scroll') onWindowScroll() {
-    let opacity = 1;
-    this.textOpacity = opacity - (window.scrollY / 400);
     if(window.scrollY > 400) {
       this.showGallery = true;
     }
@@ -82,17 +57,4 @@ export class ProjectComponent implements OnInit {
   flipPhoto(): void {
     this.photoFlipped  = !this.photoFlipped;
   }
-
-  shuffle(array) {
-    let currentIndex = array.length, temporaryValue, randomIndex;
-    while (0 !== currentIndex) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-    return array;
-  }
-
 }
