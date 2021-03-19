@@ -10,7 +10,6 @@
     &__photo {
         height: 100%;
         background-color: gray;
-        background-size: 300%;
         background-position: center;
         transition: background-size 4s linear;
     }
@@ -28,11 +27,15 @@
         width: 270px;
     }
 
+    &--zoom {
+        &:hover {
+            .polaroid-photo__photo {
+                background-size: 250% !important;
+            }
+        }
+    }
+
     &:hover {
         transform: scale(1.05);
-
-        .polaroid-photo__photo {
-            background-size: 250%;
-        }
     }
 }

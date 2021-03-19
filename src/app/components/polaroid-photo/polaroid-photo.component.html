@@ -1,7 +1,14 @@
 <div [ngClass]="{
     'polaroid-photo': true,
     'polaroid-photo--landscape': orientation === 'landscape',
-    'polaroid-photo--big': size === 'big'}"
+    'polaroid-photo--big': size === 'big',
+    'polaroid-photo--zoom': zoom }"
 >
-    <div class="polaroid-photo__photo" [ngStyle]="{'background-image': 'url(' + photo + ')'}"></div>
+    <div
+        class="polaroid-photo__photo"
+        [ngStyle]="{
+            'background-image': 'url(' + photo + ')',
+            'background-size': zoom ? '300%' : 'cover'
+        }">
+    </div>
 </div>

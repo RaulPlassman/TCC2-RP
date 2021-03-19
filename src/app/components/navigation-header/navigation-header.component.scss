@@ -23,11 +23,13 @@
         &__items-container {
             display: flex;
             list-style: none;
+            position: relative;
     
             &__item {
                 font-size: 14px;
                 font-weight: bold;
                 text-transform: uppercase;
+                outline: none;
                 cursor: pointer;
     
                 &:not(:last-child) {
@@ -40,6 +42,14 @@
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                 }
+            }
+
+            &__indicator {
+                height: 1px;
+                background: white;
+                position: absolute;
+                bottom: -10px;
+                transition: all 0.2s ease;
             }
         }
     }

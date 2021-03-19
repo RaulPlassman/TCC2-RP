@@ -10,6 +10,13 @@
                 [routerLink]="[item.link]">
                 {{item.name}}
             </li>
+            <div
+                class="navigation-header__container__items-container__indicator"
+                [ngStyle]="{
+                    'width': indicatorWidth,
+                    'left': indicatorPosition
+                }"
+            ></div>
         </ul>
     </div>
 </header>
