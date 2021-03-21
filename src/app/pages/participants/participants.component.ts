@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ParticipantService } from 'src/app/services/participant-service/participant.service';
 
 @Component({
   selector: 'app-participants',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParticipantsComponent implements OnInit {
 
-  constructor() { }
+  participants: Array<any> = [];
+
+  constructor(private participantService: ParticipantService) { }
 
   ngOnInit(): void {
+    this.participantService.getParticipants().subscribe(data => {
+      this.participants = data["participants"];
+    });
   }
 
 }
