@@ -10,3 +10,8 @@ body {
     width: 900px;
     margin: auto;
 }
+
+@font-face {
+    font-family: "Black Colnes";
+    src: local("Black Colnes"), url(./assets/fonts/black_colnes.ttf) format("truetype");
+}

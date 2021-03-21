@@ -16,7 +16,7 @@
             &__text {
                 margin-top: 60px;
                 opacity: 0;
-                animation: showContent 1.5s ease 2s forwards;
+                animation: showContent 1.5s ease 1s forwards;
 
                 & > p {
                     width: 500px;
@@ -28,7 +28,7 @@
                     margin-top: 30px;
                     text-align: center;
                     opacity: 0;
-                    animation: showContent 1.5s ease 3s forwards;
+                    animation: showContent 1.5s ease 1.5s forwards;
 
                     & > img {
                         width: 270px;
@@ -47,7 +47,7 @@
                     height: 400px;
                     perspective: 600px;
                     opacity: 0;
-                    animation: showContent 1.5s ease 1s forwards;
+                    animation: showContent 1.5s ease 0.5s forwards;
 
                     &__card {
                         width: 100%;
@@ -124,7 +124,6 @@
                 display: flex;
                 justify-content: center;
                 opacity: 0;
-                cursor: pointer;
             }
         }
     }

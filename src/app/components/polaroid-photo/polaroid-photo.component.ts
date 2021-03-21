@@ -11,6 +11,7 @@ export class PolaroidPhotoComponent implements OnInit {
   @Input() orientation: string = "portrait"; //portrait or landscape
   @Input() size: string = "small"; //small or big
   @Input() zoom: boolean = false;
+  @Input() text: string;
 
   constructor() { }
 

@@ -1,19 +1,52 @@
 <article class="exposure">
     <div class="exposure__container">
-        <div class="exposure__container__column" style="padding-top: 90px; animation-delay: 1s;">
-            <div *ngFor="let photo of columns[0]" class="exposure__container__column__item">
-                <polaroid-photo [photo]="photo" [size]="'big'"></polaroid-photo>
-            </div>
-        </div>
-        <div class="exposure__container__column" style="animation-delay: 2s;">
-            <div *ngFor="let photo of columns[1]" class="exposure__container__column__item">
-                <polaroid-photo [photo]="photo" [size]="'big'"></polaroid-photo>
-            </div>
-        </div>
-        <div class="exposure__container__column" style="padding-top: 170px; animation-delay: 3s;">
-            <div *ngFor="let photo of columns[2]" class="exposure__container__column__item">
-                <polaroid-photo [photo]="photo" [size]="'big'"></polaroid-photo>
+        <div
+            class="exposure__container__column"
+            *ngFor="let column of columns; let i = index"
+            [ngStyle]="{
+                'padding-top': i === 0 ? '90px' : i === 1 ? '30px' : '170px',
+                'animation-delay': i == 0 ? '0.5s' : i === 1 ? '1s' : '1.5s' 
+            }">
+            <div *ngFor="let photo of columns[i]" class="exposure__container__column__item">
+                <polaroid-photo
+                    [photo]="photo.src"
+                    [size]="'big'"
+                    [text]="photo.name"
+                    (click)="togglePhotoViewer(photo)">
+                </polaroid-photo>
             </div>
         </div>
     </div>
+
+    <aside *ngIf="photoViewer" class="exposure__photo-viewer" (click)="togglePhotoViewer()">
+        <div class="exposure__photo-viewer__container">
+            <div class="exposure__photo-viewer__container__photo">
+                <div
+                    class="exposure__photo-viewer__container__photo__btn-container"
+                    (click)="previous($event)"
+                >
+                    <div
+                        *ngIf="currentPhotoIndex > 0"
+                        class="exposure__photo-viewer__container__photo__btn-container__left"
+                    >
+                        <img src="../../../assets/icons/chevron-left.svg" alt="Anterior">
+                    </div>
+                </div>
+                <img [src]="currentPhoto.src" alt="Nós" (click)="$event.stopPropagation()">
+                <div
+                    class="exposure__photo-viewer__container__photo__btn-container"
+                    (click)="next($event)"
+                >
+                    <div
+                        *ngIf="currentPhotoIndex < 27"
+                        class="exposure__photo-viewer__container__photo__btn-container__right">
+                        <img src="../../../assets/icons/chevron-right.svg" alt="Pŕoxima">
+                    </div>
+                </div>
+            </div>
+            <div class="exposure__photo-viewer__container__name">
+                {{currentPhoto.name}}
+            </div>
+        </div>
+    </aside>
 </article>

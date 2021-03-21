@@ -48,11 +48,13 @@
                 *ngFor="let photo of galleryPhotos; let i = index"
                 class="project__gallery__container__item"
                 [ngStyle]="showGallery ? {'animation': 'showGallery 1.5s ease ' + i + 's forwards'} : null">
-                <polaroid-photo
-                    [photo]="photo.src"
-                    [orientation]="photo.orientation"
-                    [zoom]="true"
-                ></polaroid-photo>
+                <a routerLink="/exposure">
+                    <polaroid-photo
+                        [photo]="photo.src"
+                        [orientation]="photo.orientation"
+                        [zoom]="true"
+                    ></polaroid-photo>
+                </a>
             </div>
         </div>
     </section>

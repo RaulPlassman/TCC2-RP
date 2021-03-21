@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,16 +6,13 @@ import { Injectable } from '@angular/core';
 })
 export class PhotoService {
 
+  photosUrl: string = "../../assets/data/photos.json";
   numberOfPhotos: number = 26;
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getAllPhotos(): Array<string> {
-    let photos = [];
-    for(let i = 1; i <= this.numberOfPhotos; i++) {
-      photos.push(`../../../assets/images/photos/${i}.jpg`);
-    }
-    return photos;
+  getAllPhotos() {
+    return this.http.get(this.photosUrl);
   }
 
   getRandomPhotos(number:number): Array<string> {

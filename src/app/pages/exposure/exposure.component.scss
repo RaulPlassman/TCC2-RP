@@ -15,13 +15,12 @@
 
         &__column {
             flex-grow: 1;
-            padding-top: 30px;
             padding-bottom: 30px;
             display: flex;
             flex-direction: column;
             align-items: center;
             opacity: 0;
-            animation: showColumn 1s ease forwards;
+            animation: appearFromBelow 1s ease forwards;
 
             &__item {
                 &:not(:last-child) {
@@ -30,9 +29,68 @@
             }
         }
     }
+
+    &__photo-viewer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(#000000, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        opacity: 0;
+        animation: showPhotoViewer 0.2s ease forwards;
+
+        &__container {
+            &__photo {
+                height: 100%;
+                display: flex;
+                align-items: center;
+            
+                &__btn-container {
+                    width: 5vw;
+                    display: flex;
+                    justify-content: center;
+
+                    &__left, &__right {
+                        height: 35px;
+                        width: 35px;
+                        border-radius: 50%;
+                        border: 1px solid white;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        opacity: 0;
+                        animation: appearFromBelow 1s ease 0.8s forwards;
+                        cursor: pointer;
+                    }
+                }
+
+                & > img {
+                    height: 85vh;
+                    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+                    margin: 1vh 20px 2vh 20px;
+                    opacity: 0;
+                    animation: appearFromBelow 1s ease 0.2s forwards;
+                }
+            }
+
+            &__name {
+                color: white;
+                font-family: "Black Colnes";
+                font-size: 40px;
+                text-align: center;
+                opacity: 0;
+                animation: appearFromBelow 1s ease 0.8s forwards;
+            }
+        }
+    }
 }
 
-@keyframes showColumn {
+@keyframes appearFromBelow {
     from {
         opacity: 0;
         transform: translateY(30px);
@@ -40,5 +98,14 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes showPhotoViewer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

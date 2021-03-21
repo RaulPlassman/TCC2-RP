@@ -4,14 +4,20 @@
     background-color: white;
     padding: 20px 12px 50px 12px;
     box-sizing: border-box;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease ;
     border-radius: 3px;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 
     &__photo {
         height: 100%;
         background-color: gray;
         background-position: center;
         transition: background-size 4s linear;
+        margin-bottom: 5px;
     }
 
     &--landscape {
@@ -35,7 +41,10 @@
         }
     }
 
-    &:hover {
-        transform: scale(1.05);
+    &__text {
+        color: #4169e1;
+        font-family: "Black Colnes";
+        font-size: 35px;
+        text-align: center;
     }
 }
