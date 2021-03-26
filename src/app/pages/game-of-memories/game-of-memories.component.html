@@ -1,3 +1,18 @@
 <article class="game-of-memories">
-    
+    <section *ngIf="gameCards.length" class="game-of-memories__cards">
+        <card-game
+            *ngFor="let card of gameCards; let i = index"
+            [ngClass]="{
+                'game-of-memories__cards__card': true,
+                'game-of-memories__cards__card--missed': card.right === false,
+                'game-of-memories__cards__card--right': card.right
+            }"
+            [photo]="'url(' + card.src + ')'"
+            [cod]="card.cod"
+            [index]="i"
+            [flipped]="card.flipped"
+            (photoFlipped)="photoFlipped($event)"
+        >
+        </card-game>
+    </section>
 </article>

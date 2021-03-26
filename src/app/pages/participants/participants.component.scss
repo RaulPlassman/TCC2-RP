@@ -9,6 +9,8 @@
         box-sizing: border-box;
         display: flex;
         align-items: center;
+        opacity: 0;
+        animation: appearFromTheLeft 1s ease forwards;
         
         &__text {
             color: black;
@@ -34,6 +36,7 @@
 
         &--reverse {
             flex-direction: row-reverse;
+            animation: appearFromTheRight 1s ease forwards;
 
             .participants__item__text {
                 padding-right: 0;
@@ -41,5 +44,27 @@
                 text-align: left;
             }
         }
+    }
+}
+
+@keyframes appearFromTheLeft {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes appearFromTheRight {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }

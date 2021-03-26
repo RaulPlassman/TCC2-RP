@@ -11,6 +11,8 @@ import { ProjectComponent } from './pages/project/project.component';
 import { ParticipantsComponent } from './pages/participants/participants.component';
 import { GameOfMemoriesComponent } from './pages/game-of-memories/game-of-memories.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CardComponent } from './components/card/card.component';
+import { CardGameComponent } from './components/card-game/card-game.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { FooterComponent } from './components/footer/footer.component';
     ProjectComponent,
     ParticipantsComponent,
     GameOfMemoriesComponent,
-    FooterComponent
+    FooterComponent,
+    CardComponent,
+    CardGameComponent
   ],
   imports: [
     BrowserModule,

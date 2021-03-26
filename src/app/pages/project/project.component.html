@@ -26,19 +26,7 @@
                 </div>
             </div>
             <div class="project__home__container__photo">
-                <div class="animated-polaroid-photo" (mouseenter)="flipPhoto()" (mouseleave)="flipPhoto()">
-                    <div [ngClass]="{'animated-polaroid-photo__card': true, 'is-flipped': photoFlipped}">
-                        <div class="animated-polaroid-photo__card__face--front">
-                            <div
-                                class="animated-polaroid-photo__card__face--front__image-container"
-                                [ngStyle]="{'background-image': currentCardPhoto}">
-                            </div>
-                        </div>
-                        <div class="animated-polaroid-photo__card__face--back">
-                            <img src="../../../assets/images/logo.png" alt="Nós">
-                        </div>
-                    </div>
-                </div>
+                <card [photo]="currentCardPhoto"></card>
             </div>
         </div>
     </section>

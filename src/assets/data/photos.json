@@ -2,143 +2,115 @@
     "photos": [
         {
             "src": "../../../assets/images/photos/1.jpg",
-            "name": "Raul Plassman",
-            "couple": "12.jpg"
+            "name": "Raul Plassman"
         },
         {
             "src": "../../../assets/images/photos/2.jpg",
-            "name": "Raul Plassman",
-            "couple": "23"
+            "name": "Raul Plassman"
         },
         {
             "src": "../../../assets/images/photos/3.jpg",
-            "name": "Raul Plassman",
-            "couple": "7"
+            "name": "Raul Plassman"
         },
         {
             "src": "../../../assets/images/photos/4.jpg",
-            "name": "Bruno",
-            "couple": "25"
+            "name": "Bruno"
         },
         {
             "src": "../../../assets/images/photos/5.jpg",
-            "name": "Raul Plassman",
-            "couple": "11"
+            "name": "Raul Plassman"
         },
         {
             "src": "../../../assets/images/photos/6.jpg",
-            "name": "Caroline Diniz",
-            "couple": "9"
+            "name": "Caroline Diniz"
         },
         {
             "src": "../../../assets/images/photos/7.jpg",
-            "name": "Roni Nogueira",
-            "couple": "3"
+            "name": "Roni Nogueira"
         },
         {
             "src": "../../../assets/images/photos/8.jpg",
-            "name": "Roni Nogueira",
-            "couple": ""
+            "name": "Roni Nogueira"
         },
         {
             "src": "../../../assets/images/photos/9.jpg",
-            "name": "Raul Plassman",
-            "couple": "6"
+            "name": "Raul Plassman"
         },
         {
             "src": "../../../assets/images/photos/10.jpg",
-            "name": "Raquel Lopes",
-            "couple": "15"
+            "name": "Raquel Lopes"
         },
         {
             "src": "../../../assets/images/photos/11.jpg",
-            "name": "Herbster Alex",
-            "couple": "5"
+            "name": "Herbster Alex"
         },
         {
             "src": "../../../assets/images/photos/12.jpg",
-            "name": "Erisson Nunes",
-            "couple": "1"
+            "name": "Erisson Nunes"
         },
         {
             "src": "../../../assets/images/photos/13.jpg",
-            "name": "Raquel Lopes",
-            "couple": ""
+            "name": "Raquel Lopes"
         },
         {
             "src": "../../../assets/images/photos/14.jpg",
-            "name": "Raquel Lopes",
-            "couple": ""
+            "name": "Raquel Lopes"
         },
         {
             "src": "../../../assets/images/photos/15.jpg",
-            "name": "Raul Plassman",
-            "couple": "10"
+            "name": "Raul Plassman"
         },
         {
             "src": "../../../assets/images/photos/16.jpg",
-            "name": "Trojany",
-            "couple": ""
+            "name": "Trojany"
         },
         {
             "src": "../../../assets/images/photos/17.jpg",
-            "name": "Maria Carolina",
-            "couple": ""
+            "name": "Maria Carolina"
         },
         {
             "src": "../../../assets/images/photos/18.jpg",
-            "name": "Maria Carolina",
-            "couple": ""
+            "name": "Maria Carolina"
         },
         {
             "src": "../../../assets/images/photos/19.jpg",
-            "name": "Trojany",
-            "couple": ""
+            "name": "Trojany"
         },
         {
             "src": "../../../assets/images/photos/20.jpg",
-            "name": "Brendon Girao",
-            "couple": ""
+            "name": "Brendon Girao"
         },
         {
             "src": "../../../assets/images/photos/21.jpg",
-            "name": "Raul Plassman",
-            "couple": "24"
+            "name": "Raul Plassman"
         },
         {
             "src": "../../../assets/images/photos/22.jpg",
-            "name": "Brendon Girao",
-            "couple": ""
+            "name": "Brendon Girao"
         },
         {
             "src": "../../../assets/images/photos/23.jpg",
-            "name": "Jefferson Skorupski",
-            "couple": "2"
+            "name": "Jefferson Skorupski"
         },
         {
             "src": "../../../assets/images/photos/24.jpg",
-            "name": "Dandhara Duarte",
-            "couple": "21"
+            "name": "Dandhara Duarte"
         },
         {
             "src": "../../../assets/images/photos/25.jpg",
-            "name": "Raul Plassman",
-            "couple": "4"
+            "name": "Raul Plassman"
         },
         {
             "src": "../../../assets/images/photos/26.jpg",
-            "name": "Roni Nogueira",
-            "couple": ""
+            "name": "Roni Nogueira"
         },
         {
             "src": "../../../assets/images/photos/27.jpg",
-            "name": "Naira",
-            "couple": "28"
+            "name": "Naira"
         },
         {
             "src": "../../../assets/images/photos/28.jpg",
-            "name": "Raul Plassman",
-            "couple": "27"
+            "name": "Raul Plassman"
         }
     ]
 }

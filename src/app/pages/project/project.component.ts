@@ -12,7 +12,6 @@ export class ProjectComponent implements OnInit {
   NUMBER_OF_GALLERY_PHOTOS: number = 9;
 
   cardPhotos: Array<string> = [];
-  photoFlipped: boolean = false;
   currentCardPhoto: string;
   galleryPhotos: Array<{src: string, orientation: string}> = [];
   showGallery: boolean = false; 
@@ -52,9 +51,5 @@ export class ProjectComponent implements OnInit {
     if(window.scrollY > 400) {
       this.showGallery = true;
     }
-  }
-
-  flipPhoto(): void {
-    this.photoFlipped  = !this.photoFlipped;
   }
 }

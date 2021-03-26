@@ -1,0 +1,16 @@
+<div
+    class="card-game"
+    (click)="flipPhoto()"
+>
+    <div [ngClass]="{'card-game__card': true, 'is-flipped': flipped}">
+        <div class="card-game__card__face--front">
+            <div
+                class="card-game__card__face--front__image-container"
+                [ngStyle]="{'background-image': photo}">
+            </div>
+        </div>
+        <div class="card-game__card__face--back">
+            <!-- <img src="../../../assets/images/logo.png" alt="Nós"> -->
+        </div>
+    </div>
+</div>

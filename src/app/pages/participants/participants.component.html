@@ -1,7 +1,9 @@
 <article class="participants">
     <section
         *ngFor="let participant of participants; let i = index"
-        [ngClass]="{'participants__item': true, 'participants__item--reverse': i % 2 === 0}">
+        [ngClass]="{'participants__item': true, 'participants__item--reverse': i % 2 === 0}"
+        [ngStyle]="{'animation-delay': (i + 1) + 's'}"
+        >
         <div class="participants__item__text">
             <div class="participants__item__text__name">{{participant.name}}</div>
             <div class="participants__item__text__info">

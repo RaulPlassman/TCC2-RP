@@ -1,4 +1,41 @@
 .game-of-memories {
-    height: 100vh;
-    background-color: white;
+    padding-top: 88px;
+    background-color: gray;
+
+    &__cards {
+        width: 900px;
+        margin: auto;
+        padding: 30px 60px;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 20px;
+
+        &__card {
+            &--missed {
+                animation: shake 0.3s linear;
+            }
+            &--right {
+                animation: zoomIn 0.3s linear;
+            }
+        }
+    }
+}
+
+@keyframes shake {
+    0%, 50%, 100% {
+        transform: rotate(2deg);
+    }
+    25%, 75% {
+        transform: rotate(-2deg);
+    }
+}
+
+@keyframes zoomIn {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
 }

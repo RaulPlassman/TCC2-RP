@@ -1,0 +1,78 @@
+{
+    "originals": [
+        {
+            "src": "../../../assets/images/photos/1.jpg",
+            "cod": "A"
+        },
+        {
+            "src": "../../../assets/images/photos/2.jpg",
+            "cod": "B"
+        },
+        {
+            "src": "../../../assets/images/photos/3.jpg",
+            "cod": "C"
+        },
+        {
+            "src": "../../../assets/images/photos/4.jpg",
+            "cod": "D"
+        },
+        {
+            "src": "../../../assets/images/photos/5.jpg",
+            "cod": "E"
+        },
+        {
+            "src": "../../../assets/images/photos/6.jpg",
+            "cod": "F"
+        },
+        {
+            "src": "../../../assets/images/photos/10.jpg",
+            "cod": "G"
+        },
+        {
+            "src": "../../../assets/images/photos/21.jpg",
+            "cod": "H"
+        },
+        {
+            "src": "../../../assets/images/photos/27.jpg",
+            "cod": "I"
+        }
+    ],
+    "couples": [
+        {
+            "src": "../../../assets/images/photos/12.jpg",
+            "cod": "A"
+        },
+        {
+            "src": "../../../assets/images/photos/23.jpg",
+            "cod": "B"
+        },
+        {
+            "src": "../../../assets/images/photos/7.jpg",
+            "cod": "C"
+        },
+        {
+            "src": "../../../assets/images/photos/25.jpg",
+            "cod": "D"
+        },
+        {
+            "src": "../../../assets/images/photos/11.jpg",
+            "cod": "E"
+        },
+        {
+            "src": "../../../assets/images/photos/9.jpg",
+            "cod": "F"
+        },
+        {
+            "src": "../../../assets/images/photos/15.jpg",
+            "cod": "G"
+        },
+        {
+            "src": "../../../assets/images/photos/24.jpg",
+            "cod": "H"
+        },
+        {
+            "src": "../../../assets/images/photos/28.jpg",
+            "cod": "I"
+        }
+    ]
+}
