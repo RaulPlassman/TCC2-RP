@@ -15,6 +15,7 @@ export class ExposureComponent implements OnInit {
   photoViewer: boolean = false;
   currentPhoto: any;
   currentPhotoIndex: number;
+  thumbnails: Array<any> = [];
   
   constructor(private photoService: PhotoService) {
   }
@@ -37,6 +38,7 @@ export class ExposureComponent implements OnInit {
     this.photoViewer = !this.photoViewer;
     this.currentPhoto = photo;
     this.currentPhotoIndex = this.photos.findIndex(photo => photo === this.currentPhoto);
+    this.setThumbnails();
   }
 
   previous(e): void {
@@ -44,6 +46,7 @@ export class ExposureComponent implements OnInit {
     if(this.currentPhotoIndex - 1 >= 0) {
       this.currentPhotoIndex--;
       this.currentPhoto = this.photos[this.currentPhotoIndex];
+      this.setThumbnails();
     }
   }
 
@@ -52,7 +55,30 @@ export class ExposureComponent implements OnInit {
     if(this.currentPhotoIndex + 1 <= 27) {
       this.currentPhotoIndex++;
       this.currentPhoto = this.photos[this.currentPhotoIndex];
+      this.setThumbnails();
     }
+  }
+
+  setThumbnails(): void {
+    this.thumbnails = [];
+    if(this.currentPhotoIndex <= 4) {
+      this.thumbnails = this.photos.slice(0, 9);
+    }
+    else if(this.currentPhotoIndex >= 23) {
+      this.thumbnails = this.photos.slice(19, 28);
+    }
+    else {
+      for(let i = this.currentPhotoIndex - 4; i <= this.currentPhotoIndex + 4; i++) {
+        this.thumbnails.push(this.photos[i]);
+      } 
+    }
+  }
+
+  selectThumbnail(photo, e): void {
+    e.stopPropagation();
+    this.currentPhoto = photo;
+    this.currentPhotoIndex = this.photos.findIndex(item => photo.src === item.src);
+    this.setThumbnails();
   }
 
 }

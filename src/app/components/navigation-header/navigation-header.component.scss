@@ -4,6 +4,8 @@
     padding: 20px 0;
     background-color: black;
     z-index: 1;
+    opacity: 0;
+    animation: showNav 2s ease 1s forwards;
 
     &__container {
         width: 900px;
@@ -53,5 +55,14 @@
                 transition: all 0.2s ease;
             }
         }
+    }
+}
+
+@keyframes showNav {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

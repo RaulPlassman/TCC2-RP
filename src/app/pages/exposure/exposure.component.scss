@@ -78,13 +78,24 @@
                 }
             }
 
-            &__name {
-                color: white;
-                font-family: "Black Colnes";
-                font-size: 40px;
-                text-align: center;
-                opacity: 0;
-                animation: appearFromBelow 1s ease 0.8s forwards;
+            &__thumbnails {
+                height: 52px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                & > img {
+                    height: 50px;
+                    opacity: 0.3;
+                    margin: 0 5px;
+                    transition: all 0.2s ease;
+                    cursor: pointer;
+
+                    &.active {
+                        opacity: 1;
+                        height: 52px;
+                    }
+                }
             }
         }
     }

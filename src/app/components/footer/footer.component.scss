@@ -1,6 +1,8 @@
 .footer {
     padding: 20px 0;
     text-align: center;
+    opacity: 0;
+    animation: showFooter 2s ease 1s forwards;
 
     & > img {
         height: 50px;
@@ -10,5 +12,14 @@
     &__copyright {
         font-size: 12px;
         color: gray;
+    }
+}
+
+@keyframes showFooter {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

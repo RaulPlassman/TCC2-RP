@@ -20,7 +20,7 @@
 
     <aside *ngIf="photoViewer" class="exposure__photo-viewer" (click)="togglePhotoViewer()">
         <div class="exposure__photo-viewer__container">
-            <div class="exposure__photo-viewer__container__photo">
+            <div class="exposure__photo-viewer__container__photo" (click)="$event.stopPropagation()">
                 <div
                     class="exposure__photo-viewer__container__photo__btn-container"
                     (click)="previous($event)"
@@ -44,8 +44,13 @@
                     </div>
                 </div>
             </div>
-            <div class="exposure__photo-viewer__container__name">
-                {{currentPhoto.name}}
+            <div class="exposure__photo-viewer__container__thumbnails" (click)="$event.stopPropagation()">
+                <img
+                    *ngFor="let thumbnail of thumbnails"
+                    [ngClass]="{'active': thumbnail.src === currentPhoto.src}"
+                    [src]="thumbnail.src"
+                    (click)="selectThumbnail(thumbnail, $event)"
+                >
             </div>
         </div>
     </aside>

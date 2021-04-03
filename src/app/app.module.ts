@@ -13,6 +13,7 @@ import { GameOfMemoriesComponent } from './pages/game-of-memories/game-of-memori
 import { FooterComponent } from './components/footer/footer.component';
 import { CardComponent } from './components/card/card.component';
 import { CardGameComponent } from './components/card-game/card-game.component';
+import { WarningComponent } from './pages/warning/warning.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CardGameComponent } from './components/card-game/card-game.component';
     GameOfMemoriesComponent,
     FooterComponent,
     CardComponent,
-    CardGameComponent
+    CardGameComponent,
+    WarningComponent
   ],
   imports: [
     BrowserModule,
