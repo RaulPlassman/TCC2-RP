@@ -1,6 +1,6 @@
 .card-game {
-    width: 180px;
-    height: 250px;
+    width: 130px;
+    height: 170px;
     perspective: 600px;
 
     &__card {
@@ -29,7 +29,7 @@
                 &__image-container {
                     height: 80%;
                     width: 90%;
-                    margin-top: -30px;
+                    margin-top: -20px;
                     background-color: gray;
                     background-size: cover;
                     transition: background-image 2s ease;
@@ -41,11 +41,6 @@
                 background-image: url('../../../assets/images/card-back.png');
                 background-size: cover;
                 background-position: center;
-                // background: radial-gradient(circle at 12.5% 12.5%, #ec68e4 0, #fa5fd3 4.55%, #ff58c1 9.09%, #ff52ae 13.64%, #ff509c 18.18%, #ff5089 22.73%, #ff5377 27.27%, #ff5965 31.82%, #ff6154 36.36%, #ff6943 40.91%, #fe7232 45.45%, #f37b1f 50%, #e78303 54.55%, #d98b00 59.09%, #cb9300 63.64%, #bb9900 68.18%, #aa9f00 72.73%, #99a400 77.27%, #86a900 81.82%, #70ad04 86.36%, #58b023 90.91%, #36b337 95.45%, #00b54a 100%);
-                
-                // & > img {
-                //     width: 60px;
-                // }
             }
         }
 

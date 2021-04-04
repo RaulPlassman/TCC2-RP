@@ -1,5 +1,6 @@
 .project {
     position: relative;
+    scroll-behavior: smooth;
     
     &__home {
         width: 900px;
@@ -19,13 +20,14 @@
                 animation: showContent 1.5s ease 1s forwards;
 
                 & > p {
-                    width: 500px;
+                    width: 450px;
                     font-size: 13px;
                     line-height: 1.4;
+                    text-align: justify;
                 }
 
                 &__image {
-                    margin-top: 30px;
+                    margin-top: 50px;
                     text-align: center;
                     opacity: 0;
                     animation: showContent 1.5s ease 1.5s forwards;
@@ -43,6 +45,17 @@
                 justify-content: center;
                 opacity: 0;
                 animation: showContent 1.5s ease 0.5s forwards;
+            }
+        }
+
+        &__arrow {
+            margin-top: -50px;
+            text-align: center;
+
+            & > img {
+                height: 30px;
+                animation: floating 1.5s ease infinite;
+                cursor: pointer;
             }
         }
     }
@@ -97,6 +110,15 @@
     }
     to {
         opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(-10px);
+    }
+    50% {
         transform: translateY(0);
     }
 }

@@ -1,24 +1,42 @@
 .game-of-memories {
     padding-top: 88px;
-    background-color: gray;
+    background-color: lightgrey;
+    background-image: url('../../../assets/images/game-of-memories-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 
     &__cards {
         width: 900px;
         margin: auto;
-        padding: 30px 60px;
+        padding: 30px 30px;
         box-sizing: border-box;
         display: grid;
-        grid-template-columns: auto auto auto auto;
-        grid-gap: 20px;
+        grid-template-columns: auto auto auto auto auto auto;
+        grid-gap: 10px;
+        opacity: 0;
+        animation: showcards 1s ease 2s forwards;
 
         &__card {
             &--missed {
                 animation: shake 0.3s linear;
             }
             &--right {
-                animation: zoomIn 0.3s linear;
+                animation: zoomIn 0.5s linear;
             }
         }
+    }
+}
+
+@keyframes showcards {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -36,6 +54,6 @@
         transform: scale(1);
     }
     50% {
-        transform: scale(1.1);
+        transform: scale(1.2);
     }
 }

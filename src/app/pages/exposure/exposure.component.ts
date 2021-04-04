@@ -23,6 +23,7 @@ export class ExposureComponent implements OnInit {
   ngOnInit(): void {
     this.photoService.getAllPhotos().subscribe(data => {
       this.photos = data["photos"];
+      this.photos = this.photos.sort(() => Math.random() - 0.5);
       const photosPerColumn = Math.ceil(this.photos.length / this.NUMBER_OF_COLUMNS);
       for(let column = 0; column < this.NUMBER_OF_COLUMNS; column++) {
         for(let i = 0; i < photosPerColumn; i++) {

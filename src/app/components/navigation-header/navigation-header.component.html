@@ -4,12 +4,6 @@
             <img src="../../../assets/images/logo.png" alt="Nós">
         </div>
         <ul class="navigation-header__container__items-container">
-            <li
-                *ngFor="let item of items"
-                class="navigation-header__container__items-container__item"
-                [routerLink]="[item.link]">
-                {{item.name}}
-            </li>
             <div
                 class="navigation-header__container__items-container__indicator"
                 [ngStyle]="{
@@ -17,6 +11,12 @@
                     'left': indicatorPosition
                 }"
             ></div>
+            <li
+                *ngFor="let item of items"
+                class="navigation-header__container__items-container__item"
+                [routerLink]="[item.link]">
+                {{item.name}}
+            </li>
         </ul>
     </div>
 </header>

@@ -11,6 +11,7 @@ export class GameOfMemoriesComponent implements OnInit {
   gameCards: Array<any> = [];
   selectedCard: any;
   points: number = 0;
+  disabled: boolean = false;
 
   constructor(private game: GameService) { }
 
@@ -24,25 +25,10 @@ export class GameOfMemoriesComponent implements OnInit {
       let originalCards = data["originals"];
       let coupleCards = data["couples"];
       let numbers = [0];
-      while(this.gameCards.length < 8) {
-        let randomNumber = 0;
-        while(numbers.includes(randomNumber)) {
-          randomNumber = Math.floor(Math.random() * (originalCards.length - 1) + 1);
-        }
-        numbers.push(randomNumber);
-        let card = {
-          ...originalCards[randomNumber],
-          flipped: false,
-          right: undefined
-        };
-        let coupleCard = {
-          ...coupleCards.find(card => card.cod === originalCards[randomNumber].cod),
-          flipped: false,
-          right: undefined
-        };
-        this.gameCards.push(card);
-        this.gameCards.push(coupleCard);
-      }
+      this.gameCards = [
+        ...originalCards,
+        ...coupleCards
+      ];
       this.gameCards = this.gameCards.sort(() => Math.random() - 0.5);
     });
   }
@@ -51,6 +37,7 @@ export class GameOfMemoriesComponent implements OnInit {
     if(!this.gameCards[clickedCard.index].flipped) {
       this.gameCards[clickedCard.index].flipped = true;
       if(this.selectedCard) {
+        this.disabled = true;
         if(this.selectedCard.cod === clickedCard.cod) {
           this.points++;
           setTimeout(() => {
@@ -61,8 +48,9 @@ export class GameOfMemoriesComponent implements OnInit {
             this.gameCards[this.selectedCard.index].right = undefined;
             this.gameCards[clickedCard.index].right = undefined;
             this.selectedCard = undefined;
+            this.disabled = false;
           }, 1500);
-          if(this.points === 4) {
+          if(this.points === 9) {
             console.log("Você ganhou!");
             setTimeout(() => {
               this.gameCards.map(card => {
@@ -85,6 +73,7 @@ export class GameOfMemoriesComponent implements OnInit {
             this.gameCards[this.selectedCard.index].right = undefined;
             this.gameCards[clickedCard.index].right = undefined;
             this.selectedCard = undefined;
+            this.disabled = false;
           }, 2000);
         }
       }

@@ -3,23 +3,16 @@
         <div class="project__home__container">
             <div class="project__home__container__text">
                 <p>
-                    Nós é uma série fotográfica que é parte do trabalho de conclusão de curso (TCC 2) do
-                    aluno Raul Plassman em Design Digital pela UFC-Quixadá. A série traz um olhar sobre
-                    corpos LGBTQIA+ do Sertão Central do Ceará apresentando sua diversidade e promovendo
-                    visibilidade dos mesmos. O intuito desse trabalho além de criar imagens de um grupo é
-                    discutir a imagem que esses corpos carregam ao longo dos anos em nossa sociedade. Ela
-                    foi realizada entre os anos de 2020 e início de 2021, período em que o trabalho foi
-                    construído, e contou com a participação de 15 pessoas.
+                    O Projeto Nós é uma obra que faz parte do trabalho de conclusão de curso (TCC 2) do
+                    aluno Raul Plassman, em Design Digital pela Universidade Federal do Ceará - Campus
+                    Quixadá. O trabalho é composto por uma série fotográfica e um site de apresentação
+                    que busca dar visibilidade aos corpos LGBTQIA+ do Sertão Central - CE.
                 </p>
                 <p>
-                    A ideia do trabalho surgiu do meu incômodo com relação a imagem que nossos corpos
-                    carregam, a de que somos desviantes, errados, e tudo isso acarreta grandes perdas
-                    para a nossa comunidade. Enquanto homem gay e estudante de Design Digital me sinto no
-                    dever de construir um trabalho que promova discussões que possibilitem melhorias para
-                    nossa comunidade. Todas as fotografias foram feitas em câmera analógica instantânea e
-                    construídas a partir de diálogo com os participantes. Minha maior preocupação era
-                    entender como esses corpos  se vêem na região onde vivem e que a partir dessa visão 
-                    fossem escolhidas por eles a forma como desejavam ser retratados.
+                    A série está dividida em duas fases e foi feita a partir do alinhamento das visões
+                    do artista (que também é participante) com as dos 12 demais participantes (que
+                    também são artistas). O trabalho foi realizado entre 2020 e início de 2021 e
+                    resultou em 28 imagens, que podem ser conferidas nas próximas seções deste site.
                 </p>
                 <div class="project__home__container__text__image">
                     <img src="../../../assets/images/visibilidade-LGBTQIA+.png" alt="LGBTQIA+">
@@ -29,8 +22,11 @@
                 <card [photo]="currentCardPhoto"></card>
             </div>
         </div>
+        <div class="project__home__arrow">
+            <img src="../../../assets/icons/scroll-down.svg" (click)="scroll(gallery)">
+        </div>
     </section>
-    <section class="project__gallery">
+    <section #gallery class="project__gallery">
         <div class="project__gallery__container">
             <div
                 *ngFor="let photo of galleryPhotos; let i = index"

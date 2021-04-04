@@ -47,6 +47,10 @@ export class ProjectComponent implements OnInit {
     });
   }
 
+  scroll(el: HTMLElement) {
+    el.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  }
+
   @HostListener('window:scroll') onWindowScroll() {
     if(window.scrollY > 400) {
       this.showGallery = true;

@@ -11,6 +11,7 @@ export class CardGameComponent implements OnInit {
   @Input() cod: string;
   @Input() index: number;
   @Input() flipped: boolean;
+  @Input() disabled: boolean;
 
   @Output() photoFlipped = new EventEmitter();
 
