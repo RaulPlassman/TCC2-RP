@@ -16,4 +16,11 @@
         >
         </card-game>
     </section>
+    <section *ngIf="finish" class="game-of-memories__finish-screen">
+        <div class="game-of-memories__finish-screen__content">
+            <img class="gif-image" src="../../../assets/images/game-gif.gif">
+            <img class="memorias-de-nos" src="../../../assets/images/momorias-de-nos.png" alt="Memórias de Nós">
+            <button (click)="inicializeGame()">Jogar novamente</button>
+        </div>
+    </section>
 </article>

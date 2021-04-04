@@ -12,6 +12,7 @@ export class GameOfMemoriesComponent implements OnInit {
   selectedCard: any;
   points: number = 0;
   disabled: boolean = false;
+  finish: boolean = false;
 
   constructor(private game: GameService) { }
 
@@ -20,6 +21,7 @@ export class GameOfMemoriesComponent implements OnInit {
   }
 
   inicializeGame(): void {
+    this.finish = false;
     this.points = 0;
     this.game.getCards().subscribe(data => {
       let originalCards = data["originals"];
@@ -51,15 +53,9 @@ export class GameOfMemoriesComponent implements OnInit {
             this.disabled = false;
           }, 1500);
           if(this.points === 9) {
-            console.log("Você ganhou!");
             setTimeout(() => {
-              this.gameCards.map(card => {
-                card.flipped = false;
-              });
+              this.finish = true;
             }, 2000);
-            setTimeout(() => {
-              this.inicializeGame();
-            }, 3000);
           }
         }
         else {

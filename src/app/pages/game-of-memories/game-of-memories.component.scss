@@ -16,7 +16,7 @@
         grid-template-columns: auto auto auto auto auto auto;
         grid-gap: 10px;
         opacity: 0;
-        animation: showcards 1s ease 2s forwards;
+        animation: showcards 1s ease 1s forwards;
 
         &__card {
             &--missed {
@@ -24,6 +24,51 @@
             }
             &--right {
                 animation: zoomIn 0.5s linear;
+            }
+        }
+    }
+
+    &__finish-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(#000000, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        opacity: 0;
+        animation: showFinishScreen 0.2s ease forwards;
+
+        &__content {    
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            animation: showcards 1s ease 1s forwards;
+
+            .gif-image {
+                height: 400px;
+                margin-bottom: 30px;
+            }
+            
+            .memorias-de-nos {
+                width: 300px;
+                margin-bottom: 30px;
+            }
+
+            button {
+                width: 170px;
+                margin: auto;
+                border: 1px solid white;
+                padding: 5px 15px;
+                background-color: transparent;
+                color: white;
+                cursor: pointer;
+                font-size: 16px;
+                outline: none;
             }
         }
     }
@@ -55,5 +100,14 @@
     }
     50% {
         transform: scale(1.2);
+    }
+}
+
+@keyframes showFinishScreen {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
