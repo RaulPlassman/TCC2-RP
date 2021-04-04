@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
 
 import { AppComponent } from './app.component';
 import { ExposureComponent } from './pages/exposure/exposure.component';
@@ -32,7 +34,9 @@ import { WarningComponent } from './pages/warning/warning.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+
   ],
   providers: [],
   bootstrap: [AppComponent]

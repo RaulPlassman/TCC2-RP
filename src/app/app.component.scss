@@ -1,3 +1,31 @@
 .app-container {
     min-height: calc(100vh - 123px);
 }
+
+.mobile-warning {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    padding: 30px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .app-container {
+        display: none;
+    }
+    
+    .mobile-warning {
+        display: flex;
+    }
+}
