@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "projeto-nos": {
+      "hosting": {
+        "le-corpes": [
+          "projeto-nos"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "projeto-nos"
+  }
+}
